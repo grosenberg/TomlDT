@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+	<template
+		autoinsert="false"
+		context="com.certiv.toml.dt.ui.DefaultContext"
+		deleted="false"
+		description="Group"
+		enabled="true"
+		id="com.certiv.toml.dt.ui.group"
+		name="group">group ${file} ;</template>
+
+	<template
+		autoinsert="false"
+		context="com.certiv.toml.dt.ui.DefaultContext"
+		deleted="false"
+		description="Gill"
+		enabled="true"
+		id="com.certiv.toml.dt.ui.gill"
+		name="gill">gill ${file} ;</template>
+
+</templates>

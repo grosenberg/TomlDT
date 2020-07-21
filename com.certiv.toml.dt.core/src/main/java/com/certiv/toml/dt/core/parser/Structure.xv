@@ -1,0 +1,59 @@
+xvisitor grammar Structure ;
+
+options {
+	parserClass = TomlParser;
+	superClass  = StructureBuilder ;
+}
+
+@header {
+	package com.certiv.toml.dt.core.parser.gen;
+	import com.certiv.toml.dt.core.parser.StructureBuilder ;
+}
+
+outline
+	: toml
+	| table
+	| tableArray
+	| element
+	| valueArray
+	| scalar
+	;
+
+toml
+	: /toml
+		{ onEntry:	createModule(); }
+		{ onExit:	endBlock(); }
+	;
+
+table
+	: //table
+		{ onEntry:	createTableStatement();	}
+		{ onExit:	endBlock(); }
+	;
+
+tableArray
+	: //tableArray
+		{ onEntry:	createTableArrayStatement(); }
+		{ onExit:	endBlock(); }
+	;
+
+element
+	: //element
+		{ onEntry:	createElementStatement(); }
+		{ onExit:	endBlock(); }
+	;
+
+valueArray
+	: //array
+		{ onEntry:	createArrayStatement(); }
+		{ onExit:	endBlock(); }
+	;
+
+inlineTable
+	: //inlineTable
+		{ onEntry:	createInlineTableStatement(); }
+		{ onExit:	endBlock(); }
+	;
+
+scalar	: //scalar		{ createScalarStatement(); }	;
+string	: //string		{ createStringStatement(); }	;

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            describer="com.certiv.toml.dt.core.TomlContentDescriber"
+            file-extensions="toml"
+            id="com.certiv.toml.dt.core.contentType"
+            name="Toml content "
+            priority="high">
+      </content-type>
+   </extension>
+
+   <extension
+         id="com.certiv.toml.dt.core.nature"
+         name="Toml Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="com.certiv.toml.dt.core.TomlNature">
+         </run>
+      </runtime>
+      <builder
+            id="com.certiv.toml.dt.core.builder">
+      </builder>
+   </extension>
+   <extension
+         id="com.certiv.toml.dt.core.builder"
+         name="Toml Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="com.certiv.toml.dt.core.builder.TomlBuilder">
+         </run>
+      </builder>
+   </extension>
+
+   <extension
+         id="com.certiv.toml.dt.core.problem"
+         name="Toml Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <super
+            type="org.eclipse.core.resources.textmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.certiv.toml.dt.core.preferences.PrefsInitializer">
+      </initializer>
+   </extension>
+
+</plugin>

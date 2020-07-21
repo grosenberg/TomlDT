@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.certiv.toml.dt.ui.editor.TomlDocumentSetupParticipant"
+         name="Toml Document"
+         point="org.eclipse.core.filebuffers.documentSetup">
+      <participant
+            class="com.certiv.toml.dt.ui.editor.TomlDocumentSetupParticipant"
+            contentTypeId="com.certiv.toml.dt.core.contentType"
+            extensions="toml">
+      </participant>
+   </extension>
+
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            class="net.certiv.dsl.ui.DslElementAdapterFactory"
+            adaptableType="net.certiv.dsl.core.model.IDslElement">
+         <adapter
+               type="org.eclipse.core.resources.IResource">
+         </adapter>
+         <adapter
+               type="org.eclipse.core.resources.IProject">
+         </adapter>
+         <adapter
+               type="org.eclipse.ui.model.IWorkbenchAdapter">
+         </adapter>
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+         <adapter type="org.eclipse.ui.progress.IDeferredWorkbenchAdapter"/>
+         <adapter type="org.eclipse.ui.IActionFilter"/>
+         <adapter type="org.eclipse.core.resources.IWorkspaceRoot"/>
+      </factory>
+   </extension>
+
+   <extension point="org.eclipse.core.expressions.definitions">
+		<definition id="com.certiv.toml.dt.activeContexts.definition">
+			<with variable="activePartId">
+				<equals value="com.certiv.toml.dt.ui.editor.TomlEditor" />
+			</with>
+		</definition>
+	</extension>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.certiv.toml.dt.ui.editor.TomlEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            default="true"
+            extensions="toml"
+            icon="icons/obj16/tomlfile.png"
+            id="com.certiv.toml.dt.ui.editor.TomlEditor"
+            name="Toml editor">
+         <contentTypeBinding
+               contentTypeId="com.certiv.toml.dt.core.contentType">
+         </contentTypeBinding>
+      </editor>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.editors.annotationTypes">
+      <type
+            markerSeverity="2"
+            markerType="com.certiv.toml.dt.core.problem"
+            name="com.certiv.toml.dt.ui.error"
+            super="org.eclipse.ui.workbench.texteditor.error">
+      </type>
+      <type
+            markerSeverity="1"
+            markerType="com.certiv.toml.dt.core.problem"
+            name="com.certiv.toml.dt.ui.warning"
+            super="org.eclipse.ui.workbench.texteditor.warning">
+      </type>
+      <type
+            markerSeverity="0"
+            markerType="com.certiv.toml.dt.core.problem"
+            name="com.certiv.toml.dt.ui.info"
+            super="org.eclipse.ui.workbench.texteditor.info">
+      </type>
+      <type
+            name="com.certiv.toml.dt.ui.occurrences">
+      </type>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.editors.markerAnnotationSpecification">
+      <specification
+            annotationImageProvider="com.certiv.toml.dt.ui.editor.AnnotationImageProvider"
+            annotationType="com.certiv.toml.dt.ui.error">
+      </specification>
+      <specification
+            annotationImageProvider="com.certiv.toml.dt.ui.editor.AnnotationImageProvider"
+            annotationType="com.certiv.toml.dt.ui.warning">
+      </specification>
+      <specification
+            annotationImageProvider="com.certiv.toml.dt.ui.editor.AnnotationImageProvider"
+            annotationType="com.certiv.toml.dt.ui.info">
+      </specification>
+      <specification
+            annotationType="com.certiv.toml.dt.ui.occurrences"
+            colorPreferenceKey="occurrenceIndicationColor"
+            colorPreferenceValue="212,212,212"
+            contributesToHeader="false"
+            highlightPreferenceKey="occurrenceHighlighting"
+            highlightPreferenceValue="true"
+            icon="$nl$/icons/full/obj16/searchm_obj.png"
+            isGoToNextNavigationTarget="false"
+            isGoToNextNavigationTargetKey="isOccurrenceGoToNextNavigationTarget"
+            isGoToPreviousNavigationTarget="false"
+            isGoToPreviousNavigationTargetKey="isOccurrenceGoToPreviousNavigationTarget"
+            label="Occurrences"
+            overviewRulerPreferenceKey="occurrenceIndicationInOverviewRuler"
+            overviewRulerPreferenceValue="true"
+            presentationLayer="4"
+            showInNextPrevDropdownToolbarAction="true"
+            showInNextPrevDropdownToolbarActionKey="showOccurrenceInNextPrevDropdownToolbarAction"
+            textPreferenceKey="occurrenceIndication"
+            textPreferenceValue="false"
+            textStylePreferenceKey="occurrenceTextStyle"
+            textStylePreferenceValue="NONE"
+            verticalRulerPreferenceKey="occurrenceIndicationInVerticalRuler"
+            verticalRulerPreferenceValue="false">
+      </specification>
+   </extension>
+
+
+   <extension
+         point="org.eclipse.ui.workbench.texteditor.hyperlinkDetectors">
+      <hyperlinkDetector
+            activate="true"
+            class="com.certiv.toml.dt.ui.editor.TomlHyperlinkDetector"
+            id="com.certiv.toml.dt.ui.editor.TomlHyperlinkDetector"
+            name="Toml element hyperlink"
+            targetId="net.certiv.dsl.ui.codeUnit">
+      </hyperlinkDetector>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.contexts">
+      <context
+            description="Toml Editor Context"
+            id="com.certiv.toml.dt.ui.tomlEditorScope"
+            name="Toml Content"
+            parentId="org.eclipse.ui.textEditorScope">
+      </context>
+   </extension>
+
+  <extension
+        point="org.eclipse.ui.editors.templates">
+     <contextTypeRegistry
+           id="com.certiv.toml.dt.ui.editor.TomlEditor">
+     </contextTypeRegistry>
+     <contextType
+           class="com.certiv.toml.dt.ui.templates.TomlContextType"
+           id="com.certiv.toml.dt.ui.templates.element"
+           name="Toml Element"
+           registryId="com.certiv.toml.dt.ui.editor.TomlEditor">
+     </contextType>
+     <include
+           file="templates/templates.xml"
+           translations="templates/templates.properties">
+     </include>
+      <resolver
+            class="com.certiv.toml.dt.ui.templates.VocabName"
+            contextTypeId="com.certiv.toml.dt.ui.templates.element"
+            description="Proper name of the Tokens Vocabulary file"
+            icon="icons/elcl16/templateprop_co.png"
+            name="Tokens Vocab Name"
+            type="vocabName">
+      </resolver>
+  </extension>
+  
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="net.certiv.certivtools.wizards"
+            class="com.certiv.toml.dt.ui.wizards.TomlNewWizard"
+            icon="icons/obj16/tomlfile.png"
+            id="com.certiv.toml.dt.ui.wizards.TomlNewWizard"
+            name="Toml source file">
+         <description>
+            Creates a new Toml source file.
+         </description>
+      </wizard>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="net.certiv.certivtools.prefs.TopLevelPage"
+            class="com.certiv.toml.dt.ui.preferences.page.GeneralPage"
+            id="com.certiv.toml.dt.ui.preferences.page.PrefPageGeneral"
+            name="Toml">
+      </page>
+      <page
+            category="com.certiv.toml.dt.ui.preferences.page.PrefPageGeneral"
+            class="com.certiv.toml.dt.ui.preferences.page.BuilderPage"
+            id="com.certiv.toml.dt.ui.preferences.page.PrefPageBuilder"
+            name="Builder">
+      </page>
+      <page
+            category="com.certiv.toml.dt.ui.preferences.page.PrefPageGeneral"
+            class="com.certiv.toml.dt.ui.preferences.page.EditorPage"
+            id="com.certiv.toml.preferences.page.PrefPageEditor"
+            name="Editor">
+      </page>
+      <page
+            category="com.certiv.toml.dt.ui.preferences.page.PrefPageGeneral"
+            class="com.certiv.toml.dt.ui.preferences.page.FoldingPage"
+            id="com.certiv.toml.dt.ui.preferences.page.PrefPageFolding"
+            name="Folding">
+      </page>
+      <page
+            category="com.certiv.toml.dt.ui.preferences.page.PrefPageGeneral"
+            class="com.certiv.toml.dt.ui.preferences.page.SyntaxColorPage"
+            id="com.certiv.toml.dt.ui.preferences.page.PrefPageSyntaxColoring"
+            name="Syntax Coloring">
+      </page>
+      <page
+            category="com.certiv.toml.dt.ui.preferences.page.PrefPageGeneral"
+            class="com.certiv.toml.dt.ui.preferences.page.TemplatesPage"
+            id="com.certiv.toml.dt.ui.preferences.page.PrefPageCodeTemplates"
+            name="Templates">
+      </page>
+      <page
+            category="com.certiv.toml.dt.ui.preferences.page.PrefPageGeneral"
+            class="com.certiv.toml.dt.ui.preferences.page.FormatterPage"
+            id="com.certiv.toml.dt.ui.preferences.page.PrefPageFormatter"
+            name="Formatter">
+      </page>
+   </extension>
+
+      <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="TomlDsl Source"
+            description="TomlDsl Source Actions"
+            id="com.certiv.toml.dt.ui.category.source">
+      </category>
+      <command
+            categoryId="com.certiv.toml.dt.ui.category.source"
+            description="Build files in project"
+            id="com.certiv.toml.dt.ui.build"
+            name="Manual Build">
+      </command>
+      <command
+            name="Comment/Uncomment"
+            description="Comment/Uncomment the selected lines"
+            categoryId="com.certiv.toml.dt.ui.category.source"
+            id="com.certiv.toml.dt.ui.edit.text.toggle.comment">
+      </command>
+      <command
+            name="Format"
+            description="Format Source"
+            categoryId="com.certiv.toml.dt.ui.category.source"
+            id="com.certiv.toml.dt.ui.edit.text.format">
+      </command>
+      <command
+            name="Learn"
+            description="Learn Formatting"
+            categoryId="com.certiv.toml.dt.ui.category.source"
+            id="com.certiv.toml.dt.ui.edit.text.format.learn">
+      </command>
+      <command
+            categoryId="com.certiv.toml.dt.ui.category.source"
+            description="Toggles mark occurrences in Dsl editors"
+            id="com.certiv.toml.dt.ui.edit.text.toggleMarkOccurrences"
+            name="Mark Occurrences">
+         <state
+               class="org.eclipse.ui.handlers.RegistryToggleState:false"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
+      </command>
+      <command
+            categoryId="org.eclipse.ui.category.navigate"
+            description="%ActionDefinition.openEditor.description"
+            id="net.certiv.dsl.ui.edit.text.open.editor"
+            name="%ActionDefinition.openEditor.name">
+      </command>
+   </extension>
+
+<!--
+  <extension
+        point="org.eclipse.ui.commands">
+     <command
+           categoryId="org.eclipse.ui.category.edit"
+           defaultHandler="net.certiv.dsl.internal.ui.text.completion.ContentAssistHandler"
+           description="Invokes content assist command"
+           id="net.certiv.dsl.ui.content_assist.command"
+           name="Content Assist">
+        <commandParameter
+              id="net.certiv.dsl.ui.content_assist.command.id"
+              name="Content Assist Parameter"
+              optional="true"
+              values="net.certiv.dsl.internal.ui.text.completion.ContentAssistComputerParameter">
+        </commandParameter>
+     </command>
+  </extension>
+-->
+
+
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="net.certiv.dsl.ui.handlers.BuildHandler"
+            commandId="com.certiv.toml.dt.ui.build">
+			<activeWhen>
+				<reference definitionId="com.certiv.toml.dt.activeContexts.definition" />
+			</activeWhen>
+			<enabledWhen>
+				<reference definitionId="com.certiv.toml.dt.activeContexts.definition" />
+			</enabledWhen>
+      </handler>
+      <handler
+            class="net.certiv.dsl.ui.handlers.ToggleCommentHandler"
+            commandId="com.certiv.toml.dt.ui.edit.text.toggle.comment">
+			<activeWhen>
+				<reference definitionId="com.certiv.toml.dt.activeContexts.definition" />
+			</activeWhen>
+			<enabledWhen>
+				<reference definitionId="com.certiv.toml.dt.activeContexts.definition" />
+			</enabledWhen>
+      </handler>
+      <handler
+            class="net.certiv.dsl.ui.handlers.FormatHandler"
+            commandId="com.certiv.toml.dt.ui.edit.text.format">
+			<activeWhen>
+				<reference definitionId="com.certiv.toml.dt.activeContexts.definition" />
+			</activeWhen>
+			<enabledWhen>
+				<reference definitionId="com.certiv.toml.dt.activeContexts.definition" />
+			</enabledWhen>
+      </handler>
+      <handler
+            class="com.certiv.toml.dt.ui.handlers.ToggleMarkingHandler"
+            commandId="com.certiv.toml.dt.ui.edit.text.toggleMarkOccurrences">
+			<activeWhen>
+				<reference definitionId="com.certiv.toml.dt.activeContexts.definition" />
+			</activeWhen>
+			<enabledWhen>
+				<reference definitionId="com.certiv.toml.dt.activeContexts.definition" />
+			</enabledWhen>
+      </handler>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+
+      <!--  win32:  M1=CTRL,    M2=SHIFT, M3=ALT, M4=-
+            carbon: M1=COMMAND, M2=SHIFT, M3=ALT, M4=CTRL -->
+   	 <key
+            sequence="M1+M2+F"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="com.certiv.toml.dt.ui.tomlEditorScope"
+            commandId="com.certiv.toml.dt.ui.edit.text.format"/>
+     <key
+            sequence="M1+/"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="com.certiv.toml.dt.ui.tomlEditorScope"
+            commandId="com.certiv.toml.dt.ui.edit.text.toggle.comment"/>
+	 <key
+	        sequence="M2+M3+O"
+	        contextId="com.certiv.toml.dt.ui.tomlEditorScope"
+	        commandId="com.certiv.toml.dt.ui.edit.text.toggleMarkOccurrences"
+	        schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+	 <key
+	        platform="carbon"
+	        sequence="M1+M3+O"
+	        contextId="com.certiv.toml.dt.ui.tomlEditorScope"
+	        commandId="com.certiv.toml.dt.ui.edit.text.toggleMarkOccurrences"
+	        schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+	</extension>
+  
+  
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.certiv.toml.dt.ui.toolbars.dslToolbar">
+            <command
+                  commandId="com.certiv.toml.dt.ui.edit.text.toggleMarkOccurrences"
+                  icon="icons/etool16/mark_occurrences.png"
+                  style="toggle"
+                  tooltip="Toggle Mark Occcurrences">
+	            <visibleWhen
+    	              checkEnabled="false">
+        	       <reference
+            	         definitionId="com.certiv.toml.dt.activeContexts.definition">
+	               </reference>
+    	        </visibleWhen>
+            </command>
+            <command
+                  commandId="com.certiv.toml.dt.ui.build"
+                  icon="icons/etool16/build_exec.png"
+                  style="push"
+                  tooltip="Build DSL files">
+	            <visibleWhen
+    	              checkEnabled="false">
+        	       <reference
+        	       		definitionId="com.certiv.toml.dt.activeContexts.definition">
+	               </reference>
+    	        </visibleWhen>
+    	    </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+  
+</plugin>
