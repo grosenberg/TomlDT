@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2012, 2020 Certiv Analytics.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
 // Generated from D:/DevFiles/Eclipse/Tools/Editors/com.certiv.toml.dt/com.certiv.toml.dt.core/src/main/java/com/certiv/toml/dt/core/parser/TomlLexer.g4 by ANTLR 4.8
 
 package com.certiv.toml.dt.core.parser.gen;
