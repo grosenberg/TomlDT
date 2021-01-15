@@ -10,6 +10,8 @@
  *******************************************************************************/
 package com.certiv.toml.dt.ui;
 
+import org.apache.logging.log4j.Level;
+
 import org.osgi.framework.BundleContext;
 
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -21,7 +23,6 @@ import com.certiv.toml.dt.ui.editor.TomlTextTools;
 
 import net.certiv.dsl.core.DslCore;
 import net.certiv.dsl.core.log.Log;
-import net.certiv.dsl.core.log.Log.LogLevel;
 import net.certiv.dsl.ui.DslUI;
 import net.certiv.dsl.ui.editor.text.DslTextTools;
 import net.certiv.dsl.ui.templates.CompletionManager;
@@ -36,7 +37,7 @@ public class TomlUI extends DslUI {
 
 	public TomlUI() {
 		super();
-		Log.defLevel(LogLevel.Debug);
+		Log.defLevel(Level.DEBUG);
 	}
 
 	public static TomlUI getDefault() {
@@ -71,8 +72,7 @@ public class TomlUI extends DslUI {
 	}
 
 	/**
-	 * Returns an image descriptor for the image file at the given plug-in relative
-	 * path
+	 * Returns an image descriptor for the image file at the given plug-in relative path
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
 		return ResourceLocator.imageDescriptorFromBundle(PLUGIN_ID, path).orElse(null);

@@ -8,7 +8,7 @@
 
 	<groupId>com.certiv</groupId>
 	<artifactId>com.certiv.toml.dt</artifactId>
-	<version>0.3.0-SNAPSHOT</version>
+	<version>0.4.0-SNAPSHOT</version>
 
 	<name>com.certiv.toml.dt :: parent</name>
 	<description>TomlDT parent</description>
@@ -20,9 +20,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<tycho.version>1.7.0</tycho.version>
-		<eclipse-repo.url>http://download.eclipse.org/releases/2020-06</eclipse-repo.url>
+		<java.version>11</java.version>
+		<tycho.version>2.0.0</tycho.version>
+		<eclipse-repo.url>http://download.eclipse.org/releases/2020-09</eclipse-repo.url>
 		<certiv-repo.url>file:/D:/DevFiles/Eclipse/Update</certiv-repo.url>
 	</properties>
 
@@ -67,7 +67,6 @@
 				<version>${tycho.version}</version>
 				<configuration>
 					<includePackedArtifacts>true</includePackedArtifacts>
-					<eclipse.p2.mirrors>false</eclipse.p2.mirrors>
 					<dependency-resolution>
 						<optionalDependencies>require</optionalDependencies>
 					</dependency-resolution>

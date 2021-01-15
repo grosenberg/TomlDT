@@ -10,52 +10,29 @@
  *******************************************************************************/
 package com.certiv.toml.dt.ui.wizards;
 
-import org.eclipse.jface.layout.GridDataFactory;
-import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 
-import com.certiv.toml.dt.core.TomlCore;
-import com.certiv.toml.dt.ui.TomlUI;
-
-import net.certiv.dsl.core.DslCore;
-import net.certiv.dsl.ui.DslUI;
-import net.certiv.dsl.ui.wizards.DslBaseWizard;
-import net.certiv.dsl.ui.wizards.DslContainerWizardPage;
+import net.certiv.dsl.ui.wizard.DslFileWizard;
+import net.certiv.dsl.ui.wizard.DslFileWizardPage;
 
 /**
  * Wizard UI to obtain the file name and location.
  */
-public class TomlNewWizardPage extends DslContainerWizardPage {
+public class TomlNewWizardPage extends DslFileWizardPage {
 
-	public TomlNewWizardPage(DslBaseWizard wizard, IStructuredSelection selection) {
+	public TomlNewWizardPage(DslFileWizard wizard, IStructuredSelection selection) {
 		super("TomlNewWizardPage", wizard, selection);
-	}
-
-	@Override
-	public DslUI getDslUI() {
-		return TomlUI.getDefault();
-	}
-
-	@Override
-	public DslCore getDslCore() {
-		return TomlCore.getDefault();
-	}
-
-	@Override
-	public void createControl(Composite parent) {
-		Composite container = new Composite(parent, SWT.NONE);
-		GridDataFactory.fillDefaults().grab(true, true).applyTo(container);
-		GridLayoutFactory.fillDefaults().spacing(6, 9).margins(6, 6).applyTo(container);
-
-		setFileName("file_name");
+		setFilename("file_name");
 		setFileExtension("toml");
-		createContainerControl(container);
+	}
 
-		setControl(container);
-		setErrorMessage(null);
-		setMessage(null);
-		validatePage();
+	@Override
+	protected void createCustomGroup(Composite topLevel) {}
+
+	@Override
+	protected String getInitialContents() {
+		String contents = "/* New *.toml file */";
+		return contents;
 	}
 }

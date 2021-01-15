@@ -13,6 +13,7 @@ package com.certiv.toml.dt.core.parser;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Lexer;
+import org.apache.logging.log4j.Level;
 
 import com.certiv.toml.dt.core.TomlCore;
 import com.certiv.toml.dt.core.parser.gen.StructureVisitor;
@@ -21,7 +22,6 @@ import com.certiv.toml.dt.core.parser.gen.TomlParser;
 
 import net.certiv.dsl.core.DslCore;
 import net.certiv.dsl.core.log.Log;
-import net.certiv.dsl.core.log.Log.LogLevel;
 import net.certiv.dsl.core.model.builder.ModelBuilder;
 import net.certiv.dsl.core.parser.DslErrorListener;
 import net.certiv.dsl.core.parser.DslParseRecord;
@@ -34,7 +34,7 @@ public class TomlSourceParser extends DslSourceParser {
 
 	public TomlSourceParser(DslParseRecord record) {
 		super(record);
-		Log.setLevel(this, LogLevel.Info);
+		Log.setLevel(this, Level.INFO);
 	}
 
 	@Override
