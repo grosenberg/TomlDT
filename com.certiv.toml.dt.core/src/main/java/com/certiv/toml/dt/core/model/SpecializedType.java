@@ -10,8 +10,8 @@
  *******************************************************************************/
 package com.certiv.toml.dt.core.model;
 
+import net.certiv.common.util.Strings;
 import net.certiv.dsl.core.model.builder.ISpecializedType;
-import net.certiv.dsl.core.util.Strings;
 
 public enum SpecializedType implements ISpecializedType {
 	

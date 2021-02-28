@@ -17,8 +17,8 @@ import org.antlr.v4.runtime.misc.Pair;
 
 import com.certiv.toml.dt.core.parser.gen.TomlLexer;
 
+import net.certiv.common.util.Strings;
 import net.certiv.dsl.core.parser.IDslToken;
-import net.certiv.dsl.core.util.Strings;
 
 public class TomlToken extends CommonToken implements IDslToken {
 

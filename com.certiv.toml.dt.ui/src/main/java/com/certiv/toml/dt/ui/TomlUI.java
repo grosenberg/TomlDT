@@ -11,18 +11,16 @@
 package com.certiv.toml.dt.ui;
 
 import org.apache.logging.log4j.Level;
-
-import org.osgi.framework.BundleContext;
-
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ResourceLocator;
+import org.osgi.framework.BundleContext;
 
 import com.certiv.toml.dt.core.TomlCore;
 import com.certiv.toml.dt.ui.editor.TomlEditor;
 import com.certiv.toml.dt.ui.editor.TomlTextTools;
 
+import net.certiv.common.log.Log;
 import net.certiv.dsl.core.DslCore;
-import net.certiv.dsl.core.log.Log;
 import net.certiv.dsl.ui.DslUI;
 import net.certiv.dsl.ui.editor.text.DslTextTools;
 import net.certiv.dsl.ui.templates.CompletionManager;

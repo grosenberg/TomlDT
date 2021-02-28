@@ -12,8 +12,8 @@ package com.certiv.toml.dt.core.preferences;
 
 import com.certiv.toml.dt.core.TomlCore;
 
+import net.certiv.common.log.Log;
 import net.certiv.dsl.core.DslCore;
-import net.certiv.dsl.core.log.Log;
 import net.certiv.dsl.core.preferences.DslPrefsInit;
 import net.certiv.dsl.core.preferences.consts.Formatter;
 

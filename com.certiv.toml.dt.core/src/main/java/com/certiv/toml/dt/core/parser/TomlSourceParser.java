@@ -20,8 +20,8 @@ import com.certiv.toml.dt.core.parser.gen.StructureVisitor;
 import com.certiv.toml.dt.core.parser.gen.TomlLexer;
 import com.certiv.toml.dt.core.parser.gen.TomlParser;
 
+import net.certiv.common.log.Log;
 import net.certiv.dsl.core.DslCore;
-import net.certiv.dsl.core.log.Log;
 import net.certiv.dsl.core.model.builder.ModelBuilder;
 import net.certiv.dsl.core.parser.DslErrorListener;
 import net.certiv.dsl.core.parser.DslParseRecord;

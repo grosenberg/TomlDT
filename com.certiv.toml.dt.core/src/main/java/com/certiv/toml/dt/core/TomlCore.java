@@ -11,12 +11,11 @@
 package com.certiv.toml.dt.core;
 
 import org.apache.logging.log4j.Level;
-
 import org.osgi.framework.BundleContext;
 
+import net.certiv.common.log.Log;
 import net.certiv.dsl.core.DslCore;
 import net.certiv.dsl.core.lang.LanguageManager;
-import net.certiv.dsl.core.log.Log;
 
 /** The activator class controls the plug-in life cycle. */
 public class TomlCore extends DslCore {

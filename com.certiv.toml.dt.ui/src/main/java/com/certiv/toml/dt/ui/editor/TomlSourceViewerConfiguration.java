@@ -10,7 +10,11 @@
  *******************************************************************************/
 package com.certiv.toml.dt.ui.editor;
 
-import static net.certiv.dsl.ui.editor.text.completion.engines.IPrefixStops.*;
+import static net.certiv.dsl.ui.editor.text.completion.engines.IPrefixStops.COLON;
+import static net.certiv.dsl.ui.editor.text.completion.engines.IPrefixStops.COMMA;
+import static net.certiv.dsl.ui.editor.text.completion.engines.IPrefixStops.LBRACE;
+import static net.certiv.dsl.ui.editor.text.completion.engines.IPrefixStops.LPAREN;
+import static net.certiv.dsl.ui.editor.text.completion.engines.IPrefixStops.SEMI;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -38,12 +42,12 @@ import com.certiv.toml.dt.ui.editor.text.ScannerCommentSL;
 import com.certiv.toml.dt.ui.editor.text.ScannerKeyword;
 import com.certiv.toml.dt.ui.editor.text.ScannerString;
 
+import net.certiv.common.util.Chars;
+import net.certiv.common.util.Strings;
 import net.certiv.dsl.core.DslCore;
 import net.certiv.dsl.core.color.DslColorRegistry;
 import net.certiv.dsl.core.preferences.IPrefsManager;
 import net.certiv.dsl.core.preferences.PrefsManager;
-import net.certiv.dsl.core.util.Chars;
-import net.certiv.dsl.core.util.Strings;
 import net.certiv.dsl.core.util.eclipse.TabStyle;
 import net.certiv.dsl.ui.DslUI;
 import net.certiv.dsl.ui.editor.DoubleClickStrategy;

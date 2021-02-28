@@ -19,11 +19,11 @@ import org.eclipse.core.runtime.Status;
 
 import com.certiv.toml.dt.core.TomlCore;
 
+import net.certiv.common.log.Log;
 import net.certiv.dsl.core.DslCore;
 import net.certiv.dsl.core.builder.Cause;
 import net.certiv.dsl.core.builder.DslBuilder;
 import net.certiv.dsl.core.console.CS;
-import net.certiv.dsl.core.log.Log;
 import net.certiv.dsl.core.model.ICodeUnit;
 
 public class TomlBuilder extends DslBuilder {
