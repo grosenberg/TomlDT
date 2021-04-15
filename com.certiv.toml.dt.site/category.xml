@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.certiv.toml.dt.feature_0.4.0.qualifier.jar" id="com.certiv.toml.dt.feature" version="0.4.0.qualifier">
+   <feature url="features/com.certiv.toml.dt.feature_0.4.1.qualifier.jar" id="com.certiv.toml.dt.feature" version="0.4.1.qualifier">
       <category name="certiv.tools"/>
    </feature>
    <category-def name="certiv.tools" label="Certiv Tools"/>
