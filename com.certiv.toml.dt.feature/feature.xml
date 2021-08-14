@@ -2,7 +2,7 @@
 <feature
       id="com.certiv.toml.dt.feature"
       label="Toml Editor"
-      version="0.4.1.qualifier"
+      version="0.4.2.qualifier"
       provider-name="Certiv Analytics">
 
    <description>

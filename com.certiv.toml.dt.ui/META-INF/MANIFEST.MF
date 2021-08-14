@@ -3,9 +3,9 @@ Automatic-Module-Name: com.certiv.toml.ui
 Bundle-ManifestVersion: 2
 Bundle-Name: Toml UI
 Bundle-SymbolicName: com.certiv.toml.dt.ui;singleton:=true
-Bundle-Version: 0.4.1.qualifier
+Bundle-Version: 0.4.2.qualifier
 Bundle-Activator: com.certiv.toml.dt.ui.TomlUI
-Require-Bundle: com.certiv.toml.dt.core;bundle-version="0.4.1",
+Require-Bundle: com.certiv.toml.dt.core;bundle-version="0.4.2",
  net.certiv.dsl.ui;bundle-version="0.2.0",
  net.certiv.dsl.core;bundle-version="0.2.0",
  net.certiv.dsl.lib;bundle-version="0.2.0",

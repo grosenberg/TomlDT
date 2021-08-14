@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>com.certiv</groupId>
 		<artifactId>com.certiv.toml.dt</artifactId>
-		<version>0.4.1-SNAPSHOT</version>
+		<version>0.4.2-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>com.certiv.toml.dt.site</artifactId>

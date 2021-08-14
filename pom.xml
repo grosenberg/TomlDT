@@ -8,7 +8,7 @@
 
 	<groupId>com.certiv</groupId>
 	<artifactId>com.certiv.toml.dt</artifactId>
-	<version>0.4.1-SNAPSHOT</version>
+	<version>0.4.2-SNAPSHOT</version>
 
 	<name>com.certiv.toml.dt :: parent</name>
 	<description>TomlDT parent</description>
@@ -22,7 +22,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
 		<tycho.version>2.0.0</tycho.version>
-		<eclipse-repo.url>http://download.eclipse.org/releases/2020-12</eclipse-repo.url>
+
+		<eclipse-repo.url>http://download.eclipse.org/releases/2021-06</eclipse-repo.url>
 		<certiv-repo.url>file:/D:/DevFiles/Eclipse/Tools/Dsl/net.certiv.dsl/net.certiv.dsl.site/target/repository</certiv-repo.url>
 	</properties>
 
