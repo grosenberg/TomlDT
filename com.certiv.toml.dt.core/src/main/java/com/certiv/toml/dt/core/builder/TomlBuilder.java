@@ -21,7 +21,6 @@ import com.certiv.toml.dt.core.TomlCore;
 
 import net.certiv.common.log.Log;
 import net.certiv.dsl.core.DslCore;
-import net.certiv.dsl.core.builder.Cause;
 import net.certiv.dsl.core.builder.DslBuilder;
 import net.certiv.dsl.core.console.CS;
 import net.certiv.dsl.core.model.ICodeUnit;
@@ -41,14 +40,15 @@ public class TomlBuilder extends DslBuilder {
 	}
 
 	@Override
-	protected IStatus buildUnits(List<ICodeUnit> srcModules, IProgressMonitor monitor, int ticks) throws CoreException {
+	protected IStatus buildUnits(List<ICodeUnit> srcModules, IProgressMonitor monitor, int ticks)
+			throws CoreException {
 		Log.info(this, String.format("Building %s", srcModules));
 
 		return Status.OK_STATUS;
 	}
 
 	@Override
-	protected void report(CS kind, Cause cause, Object... args) {}
+	protected void report(CS kind, String fmt, Object... args) {}
 
 	@Override
 	protected String destPackage(ICodeUnit unit) {
