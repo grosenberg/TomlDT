@@ -8,21 +8,13 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  *******************************************************************************/
-package com.certiv.toml.dt.core.parser;
+package com.certiv.toml.dt.ui.templates;
 
-import org.antlr.v4.runtime.tree.ParseTree;
+import com.certiv.toml.dt.ui.editor.TomlCompletionManager;
 
-import net.certiv.antlr.runtime.xvisitor.Processor;
+public class ElementsContextType extends TomlContextType {
 
-public abstract class CodeAssistAdaptor extends Processor {
-
-	protected TomlSourceParser helper;
-
-	public CodeAssistAdaptor(ParseTree tree) {
-		super(tree);
-	}
-
-	public void setHelper(TomlSourceParser helper) {
-		this.helper = helper;
+	public ElementsContextType() {
+		super(TomlCompletionManager.ELEMENTS);
 	}
 }

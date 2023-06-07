@@ -1,22 +1,13 @@
-/*******************************************************************************
- * Copyright (c) 2012, 2020 Certiv Analytics.
- *
- * This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License 2.0
- * which accompanies this distribution, and is available at
- * https://www.eclipse.org/legal/epl-2.0/
- *
- * SPDX-License-Identifier: EPL-2.0
- *******************************************************************************/
 //
-// Generated from D:\DevFiles\Eclipse\Tools\Editors\com.certiv.toml.dt\com.certiv.toml.dt.core\src\main\java\com\certiv\toml\dt\core\parser\Structure.xv
-// by XVisitor 4.7
+// Generated from com.certiv.toml.dt.core.parser.gen
+// by XVisitor 4.8.0
 //
 package com.certiv.toml.dt.core.parser.gen;
-	import org.antlr.v4.runtime.tree.ParseTree;
+	import com.certiv.toml.dt.core.model.StructureBuilder ;
 
-import com.certiv.toml.dt.core.model.StructureBuilder;
-
+import java.util.List;
+import org.antlr.v4.runtime.tree.ParseTree;
+import net.certiv.antlr.runtime.xvisitor.Processor;
 import net.certiv.antlr.runtime.xvisitor.xpath.EType;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
@@ -25,15 +16,15 @@ public class StructureVisitor extends StructureBuilder {
 	public static final String[] tokenNames = {
 		"<INVALID>", "DOC_COMMENT", "BLOCK_COMMENT", "LINE_COMMENT", "HORZ_WS", 
 		"VERT_WS", "LARRAY", "RARRAY", "LBRACKET", "RBRACKET", "LBRACE", "RBRACE", 
-		"ID", "DOT", "EQUAL", "LITERAL", "STRING", "BOOLEAN", "NUMBER", "DATE", 
-		"SEP"
+		"DOT", "EQUAL", "LITERAL", "STRING", "BOOLEAN", "NUMBER", "DATE", "SEP", 
+		"ID"
 	};
 
 	public static final int
 		DOC_COMMENT = 1, BLOCK_COMMENT = 2, LINE_COMMENT = 3, HORZ_WS = 4, VERT_WS = 5, 
 		LARRAY = 6, RARRAY = 7, LBRACKET = 8, RBRACKET = 9, LBRACE = 10, RBRACE = 11, 
-		ID = 12, DOT = 13, EQUAL = 14, LITERAL = 15, STRING = 16, BOOLEAN = 17, 
-		NUMBER = 18, DATE = 19, SEP = 20;
+		DOT = 12, EQUAL = 13, LITERAL = 14, STRING = 15, BOOLEAN = 16, NUMBER = 17, 
+		DATE = 18, SEP = 19, ID = 20;
 
 	public static final String[] ruleNames = {
 		"toml", "table", "tableArray", "element", "key", "value", "array", "inlineTable", 

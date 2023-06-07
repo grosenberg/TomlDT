@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2020 Certiv Analytics.
+ * Copyright (c) 2012 - 2023 Certiv Analytics.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -16,7 +16,7 @@ import org.osgi.framework.Bundle;
 import net.certiv.common.util.Chars;
 import net.certiv.dsl.ui.DslImageManager;
 
-public class TomlImageManager extends DslImageManager {
+public class ImageManager extends DslImageManager {
 
 	private static final Bundle locBundle = TomlUI.getDefault().getBundle();
 	private static final String locPrefix = locBundle.getSymbolicName() + Chars.DOT;
@@ -27,7 +27,7 @@ public class TomlImageManager extends DslImageManager {
 
 	public final String IMG_OVR_COMBINED = create(locBundle, OVR, locPrefix + "combined_ovr.png");
 
-	public TomlImageManager() {
+	public ImageManager() {
 		super();
 		IMG_OBJS_UNIT = create(locBundle, OBJ, locPrefix + "tomlFile.png"); //$NON-NLS-1$
 	}

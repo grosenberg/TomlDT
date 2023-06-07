@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2020 Certiv Analytics.
+ * Copyright (c) 2012 - 2023 Certiv Analytics.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -13,13 +13,13 @@ package com.certiv.toml.dt.core.parser;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Lexer;
-import org.apache.logging.log4j.Level;
 
 import com.certiv.toml.dt.core.TomlCore;
 import com.certiv.toml.dt.core.parser.gen.StructureVisitor;
 import com.certiv.toml.dt.core.parser.gen.TomlLexer;
 import com.certiv.toml.dt.core.parser.gen.TomlParser;
 
+import net.certiv.common.log.Level;
 import net.certiv.common.log.Log;
 import net.certiv.dsl.core.DslCore;
 import net.certiv.dsl.core.model.builder.ModelBuilder;
@@ -34,7 +34,7 @@ public class TomlSourceParser extends DslSourceParser {
 
 	public TomlSourceParser(DslParseRecord record) {
 		super(record);
-		Log.setLevel(this, Level.INFO);
+		Log.setLevel(Level.INFO);
 	}
 
 	@Override

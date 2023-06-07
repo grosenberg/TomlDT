@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2020 Certiv Analytics.
+ * Copyright (c) 2012 - 2023 Certiv Analytics.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -14,7 +14,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 import com.certiv.toml.dt.core.model.Specialization;
-import com.certiv.toml.dt.ui.TomlImageManager;
+import com.certiv.toml.dt.ui.ImageManager;
 import com.certiv.toml.dt.ui.TomlUI;
 
 import net.certiv.dsl.ui.DslImageDescriptor;
@@ -46,7 +46,7 @@ public class TomlStatementLabelProvider extends OutlineLabelProvider {
 
 	@Override
 	public Image decorateImage(Image image) {
-		TomlImageManager mgr = (TomlImageManager) imgMgr;
+		ImageManager mgr = (ImageManager) imgMgr;
 
 		ImageDescriptor desc = null;
 		switch (getStatementType()) {

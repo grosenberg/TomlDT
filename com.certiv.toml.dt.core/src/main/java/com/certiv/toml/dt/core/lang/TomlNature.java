@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2020 Certiv Analytics.
+ * Copyright (c) 2012 - 2023 Certiv Analytics.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -8,7 +8,9 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  *******************************************************************************/
-package com.certiv.toml.dt.core;
+package com.certiv.toml.dt.core.lang;
+
+import com.certiv.toml.dt.core.TomlCore;
 
 import net.certiv.dsl.core.DslCore;
 import net.certiv.dsl.core.lang.DslNature;

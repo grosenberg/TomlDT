@@ -2,21 +2,27 @@
 <templates>
 
 	<template
-		autoinsert="false"
-		context="com.certiv.toml.dt.ui.DefaultContext"
-		deleted="false"
-		description="Group"
+		name="Element"
+		description="Key-Value pair"
+		id="toml.element"
+		context="statement"
 		enabled="true"
-		id="com.certiv.toml.dt.ui.group"
-		name="group">group ${file} ;</template>
+		autoinsert="true">${cursor} = ""</template>
 
 	<template
-		autoinsert="false"
-		context="com.certiv.toml.dt.ui.DefaultContext"
-		deleted="false"
-		description="Gill"
+		name="Table"
+		description="Table"
+		id="toml.table"
+		context="statement"
 		enabled="true"
-		id="com.certiv.toml.dt.ui.gill"
-		name="gill">gill ${file} ;</template>
+		autoinsert="true">[${cursor}]</template>
+
+	<template
+		name="Table Array"
+		description="Table Array"
+		id="toml.tablearray"
+		context="statement"
+		enabled="true"
+		autoinsert="true">[[${cursor}]]</template>
 
 </templates>

@@ -2,12 +2,12 @@ xvisitor grammar Structure ;
 
 options {
 	parserClass = TomlParser;
-	superClass  = StructureBuilder ;
+	superClass  = StructureBuilder;
 }
 
 @header {
 	package com.certiv.toml.dt.core.parser.gen;
-	import com.certiv.toml.dt.core.parser.StructureBuilder ;
+	import com.certiv.toml.dt.core.model.StructureBuilder ;
 }
 
 outline

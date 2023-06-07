@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2020 Certiv Analytics.
+ * Copyright (c) 2012 - 2023 Certiv Analytics.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -33,7 +33,7 @@ public class PrefsInitializer extends DslPrefsInit {
 
 	@Override
 	public void initializeDefaultPreferences() {
-		Log.info(this, "Initializing Toml preferences");
+		Log.info( "Initializing Toml preferences");
 		super.initializeDefaultPreferences();
 
 		setString(Prefs.FORMAT_SPACE_EQ, Formatter.AROUND);

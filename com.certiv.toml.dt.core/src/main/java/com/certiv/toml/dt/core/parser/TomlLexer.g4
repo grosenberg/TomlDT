@@ -1,6 +1,6 @@
 /*
  * [The "BSD license"]
- * Copyright (c) 2008-2016 Gerald Rosenberg
+ * Copyright (c) 2008-2023 Gerald Rosenberg
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

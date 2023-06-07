@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2020 Certiv Analytics.
+ * Copyright (c) 2012 - 2023 Certiv Analytics.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,9 +10,11 @@
  *******************************************************************************/
 package com.certiv.toml.dt.core;
 
-import org.apache.logging.log4j.Level;
 import org.osgi.framework.BundleContext;
 
+import com.certiv.toml.dt.core.lang.TomlLangManager;
+
+import net.certiv.common.log.Level;
 import net.certiv.common.log.Log;
 import net.certiv.dsl.core.DslCore;
 import net.certiv.dsl.core.lang.LanguageManager;
@@ -26,7 +28,6 @@ public class TomlCore extends DslCore {
 
 	public TomlCore() {
 		super();
-		Log.defLevel(Level.DEBUG);
 	}
 
 	public static TomlCore getDefault() {
@@ -42,6 +43,7 @@ public class TomlCore extends DslCore {
 	public void start(BundleContext context) throws Exception {
 		plugin = this;
 		super.start(context);
+		Log.defLevel(Level.DEBUG);
 	}
 
 	@Override

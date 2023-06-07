@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2020 Certiv Analytics.
+ * Copyright (c) 2012 - 2023 Certiv Analytics.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -8,7 +8,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  *******************************************************************************/
-package com.certiv.toml.dt.ui;
+package com.certiv.toml.dt.ui.editor;
 
 import org.eclipse.jface.text.IAutoEditStrategy;
 
@@ -28,6 +28,8 @@ public class TomlCompletionManager extends CompletionManager {
 
 	@Override
 	public String getContentAssistScope(IStatement stmt) {
+		if (stmt == null) return ELEMENTS;
+
 		switch (stmt.getModelType()) {
 			case STATEMENT:
 				switch (stmt.getRulename()) {

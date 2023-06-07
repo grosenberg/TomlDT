@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2020 Certiv Analytics.
+ * Copyright (c) 2012 - 2023 Certiv Analytics.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,15 +10,16 @@
  *******************************************************************************/
 package com.certiv.toml.dt.ui;
 
-import org.apache.logging.log4j.Level;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ResourceLocator;
 import org.osgi.framework.BundleContext;
 
 import com.certiv.toml.dt.core.TomlCore;
+import com.certiv.toml.dt.ui.editor.TomlCompletionManager;
 import com.certiv.toml.dt.ui.editor.TomlEditor;
 import com.certiv.toml.dt.ui.editor.TomlTextTools;
 
+import net.certiv.common.log.Level;
 import net.certiv.common.log.Log;
 import net.certiv.dsl.core.DslCore;
 import net.certiv.dsl.ui.DslUI;
@@ -29,13 +30,12 @@ public class TomlUI extends DslUI {
 
 	private static TomlUI plugin;
 
-	private TomlImageManager imgMgr;
+	private ImageManager imgMgr;
 	private DslTextTools textTools;
 	private TomlCompletionManager compMgr;
 
 	public TomlUI() {
 		super();
-		Log.defLevel(Level.DEBUG);
 	}
 
 	public static TomlUI getDefault() {
@@ -56,6 +56,7 @@ public class TomlUI extends DslUI {
 	public void start(BundleContext context) throws Exception {
 		plugin = this;
 		super.start(context);
+		Log.defLevel(Level.DEBUG);
 	}
 
 	@Override
@@ -77,9 +78,9 @@ public class TomlUI extends DslUI {
 	}
 
 	@Override
-	public TomlImageManager getImageManager() {
+	public ImageManager getImageManager() {
 		if (imgMgr == null) {
-			imgMgr = new TomlImageManager();
+			imgMgr = new ImageManager();
 		}
 		return imgMgr;
 	}

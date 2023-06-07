@@ -6,7 +6,7 @@
          point="org.eclipse.core.contenttype.contentTypes">
       <content-type
             base-type="org.eclipse.core.runtime.text"
-            describer="com.certiv.toml.dt.core.TomlContentDescriber"
+            describer="com.certiv.toml.dt.core.lang.TomlContentDescriber"
             file-extensions="toml"
             id="com.certiv.toml.dt.core.contentType"
             name="Toml content "
@@ -20,7 +20,7 @@
          point="org.eclipse.core.resources.natures">
       <runtime>
          <run
-               class="com.certiv.toml.dt.core.TomlNature">
+               class="com.certiv.toml.dt.core.lang.TomlNature">
          </run>
       </runtime>
       <builder
