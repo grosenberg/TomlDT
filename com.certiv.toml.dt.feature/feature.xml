@@ -2,7 +2,7 @@
 <feature
       id="com.certiv.toml.dt.feature"
       label="Toml Editor"
-      version="0.5.0.qualifier"
+      version="0.6.0.qualifier"
       provider-name="Certiv Analytics">
 
    <description>
@@ -249,7 +249,7 @@ litigation.
       <import plugin="org.eclipse.ui.ide" version="3.17.200" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views" version="3.10.400" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.workbench.texteditor" version="3.15.0" match="greaterOrEqual"/>
-      <import plugin="com.certiv.toml.dt.core" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="com.certiv.toml.dt.core" version="0.6.0" match="greaterOrEqual"/>
       <import feature="net.certiv.tools.feature" version="1.2.1.qualifier"/>
       <import feature="net.certiv.dsl.feature" version="0.30.0.qualifier"/>
    </requires>

@@ -8,7 +8,7 @@
 
 	<groupId>com.certiv</groupId>
 	<artifactId>com.certiv.toml.dt</artifactId>
-	<version>0.5.0-SNAPSHOT</version>
+	<version>0.6.0-SNAPSHOT</version>
 
 	<name>com.certiv.toml.dt :: parent</name>
 	<description>TomlDT parent</description>
@@ -21,7 +21,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<tycho.version>3.0.4</tycho.version>
@@ -107,7 +107,6 @@
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho.version}</version>
 				<configuration>
-					<includePackedArtifacts>true</includePackedArtifacts>
 					<dependency-resolution>
 						<optionalDependencies>require</optionalDependencies>
 					</dependency-resolution>
